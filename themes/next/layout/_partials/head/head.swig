@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
 
+
 {% if theme.needmoreshare2.enable %}
   {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
   {% if theme.vendors.needmoreshare2_css %}
@@ -96,6 +97,18 @@
 {% endif %}
 
 {# Export some HEXO Configurations to Front-End #}
+
+<script>
+    (function(){
+        if({{ page.password }}){
+            if (prompt(请输入文章密码) !== {{ page.password }}){
+                alert(密码错误！);
+                history.back();
+            }
+        }
+    })();
+</script>
+
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
@@ -118,6 +131,7 @@
       labels: {{ theme.algolia_search.labels | json_encode }}
     }
   };
+
 </script>
 
 {% if theme.custom_file_path.head %}
@@ -126,3 +140,5 @@
   {% set custom_head = '../../_custom/head.swig' %}
 {% endif %}
 {% include custom_head %}
+
+

@@ -44,6 +44,7 @@
 
 
 
+
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
 <link rel="stylesheet" href="/css/main.css?v=7.1.2">
@@ -66,13 +67,25 @@
 
 
 
+
+<script>
+    (function(){
+        if(){
+            if (prompt(请输入文章密码) !== ){
+                alert(密码错误！);
+                history.back();
+            }
+        }
+    })();
+</script>
+
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
     version: '7.1.2',
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
     back2top: true,
     back2top_sidebar: false,
     fancybox: false,
@@ -88,10 +101,13 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
+
 </script>
 
 
   
+
+
 
 
 
@@ -412,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-12 10:58:22" itemprop="dateModified" datetime="2019-06-12T10:58:22+08:00">2019-06-12</time>
+                <time title="修改时间：2019-06-12 22:15:16" itemprop="dateModified" datetime="2019-06-12T22:15:16+08:00">2019-06-12</time>
               
             
           </span>
@@ -439,6 +455,19 @@
 
           
             
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/06/11/Unity/Excel工具/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/11/Unity/Excel工具/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -467,7 +496,38 @@
         
           
             <h2 id="测试1"><a href="#测试1" class="headerlink" title="测试1"></a>测试1</h2><p>的的的</p>
-<h3 id="测绘2"><a href="#测绘2" class="headerlink" title="测绘2"></a>测绘2</h3><h2 id="chess所所"><a href="#chess所所" class="headerlink" title="chess所所"></a>chess所所</h2><h3 id="14213"><a href="#14213" class="headerlink" title="14213"></a>14213</h3>
+<h3 id="测绘2"><a href="#测绘2" class="headerlink" title="测绘2"></a>测绘2</h3><p>sdfsdf</p>
+<p>sd</p>
+<p>f</p>
+<p>sdf</p>
+<p>sdf</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sdf</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sdf</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sdf</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sdf</p>
+<p>sd</p>
+<p>fsd</p>
+<p>f</p>
+<p>sdf</p>
+<h2 id="chess所所"><a href="#chess所所" class="headerlink" title="chess所所"></a>chess所所</h2><h3 id="14213"><a href="#14213" class="headerlink" title="14213"></a>14213</h3>
           
         
       
@@ -685,6 +745,16 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+</div>
+
 
 
 
@@ -789,6 +859,36 @@
   
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'AP1anmR9CF83gr4EnlJlMJjg-gzGzoHsz',
+    appKey: 'GKKaUF0N5JoVrbly58YFg3PF',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
 
 
 

@@ -263,7 +263,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: hide
+  display: post
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
@@ -330,11 +330,16 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+
 symbols_count_time:
   separated_meta: true
   item_text_post: true
   item_text_total: false
-  awl: 4
+  awl: 2
   wpm: 275
 
 codeblock:
@@ -632,16 +637,16 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid:  AP1anmR9CF83gr4EnlJlMJjg-gzGzoHsz # your leancloud application appid
+  appkey:  GKKaUF0N5JoVrbly58YFg3PF # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
-  language: # language, available values: en, zh-cn
+  language: zh-cn # language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # if false, comment count will only be displayed in post page, not in home page
 
@@ -825,10 +830,10 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
-  total_visitors: true
+  enable: true
+  total_visitors: false
   total_visitors_icon: user
-  total_views: true
+  total_views: false
   total_views_icon: eye
   post_views: true
   post_views_icon: eye
