@@ -11,8 +11,8 @@
     <div class="sidebar-inner">
 
       {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
-
-      {% if display_toc and toc(page.content).length > 1 %}
+ {% if page.encrypt == true %}
+      {% if display_toc and toc(page.origin).length > 1 %}
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             {{ __('sidebar.toc') }}
@@ -22,8 +22,20 @@
           </li>
         </ul>
       {% endif %}
+	{% else %}
+	  {% if display_toc and toc(page.content).length > 1 %}
+	          <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            {{ __('sidebar.toc') }}
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            {{ __('sidebar.overview') }}
+          </li>
+        </ul>
+      {% endif %}
+	{% endif %}  
 
-      <div class="site-overview-wrap sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
+      <div class="site-overview-wrap sidebar-panel{% if not display_toc or (toc(page.content).length <= 1 and toc(page.origin).length <= 1) %} sidebar-panel-active{% endif %}">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             {% if theme.avatar.url %}
@@ -32,6 +44,8 @@
                 alt="{{ author }}"/>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
+			  			  <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+              <div class="site-description motion-element" id="hitokoto"></div>
               <div class="site-description motion-element" itemprop="description">{{ description }}</div>
           </div>
 
@@ -174,7 +188,31 @@
         </div>
       </div>
 
-      {% if display_toc and toc(page.content).length > 1 %}
+{% if page.encrypt == true %}
+      {% if display_toc and toc(page.origin).length > 1 %}
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            {% set next_toc_number = theme.toc.number %}
+            {% if page.toc_number !== undefined %}
+              {% set next_toc_number = page.toc_number %}
+            {% endif %}
+            {% set next_toc_max_depth = page.toc_max_depth|default(theme.toc.max_depth)|default(6) %}
+            {% set toc = toc(page.origin, { "class": "nav", list_number: next_toc_number, max_depth: next_toc_max_depth }) %}
+
+            {% if toc.length <= 1 %}
+              <p class="post-toc-empty">{{ __('post.toc_empty') }}</p>
+            {% else %}
+              <div class="post-toc-content">{{ toc }}</div>
+            {% endif %}
+
+          </div>
+        </div>
+      <!--/noindex-->
+      {% endif %}
+	{% else %}
+	        {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
         <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
@@ -195,7 +233,8 @@
           </div>
         </div>
       <!--/noindex-->
-      {% endif %}
+		{% endif %}
+	{% endif %}
 
       {% if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top">

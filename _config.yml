@@ -4,7 +4,7 @@
 
 # Site
 title: 自由
-subtitle:
+subtitle: 
 description: 
 keywords: Unity；生活；艺术；游戏；
 author: 胡桃丐丐
@@ -82,6 +82,19 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+symbols_count_time:
+ #文章内是否显示
+  symbols: true
+  time: true
+ # 网页底部是否显示
+  total_symbols: true
+  total_time: true
+  
+ # Security
+##
+encrypt:
+    enable: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
