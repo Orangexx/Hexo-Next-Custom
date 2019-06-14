@@ -92,10 +92,14 @@ symbols_count_time:
   total_time: true
   
  # Security
+ 
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap.xml
+  sitemap: true
 ##
 encrypt:
     enable: true
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

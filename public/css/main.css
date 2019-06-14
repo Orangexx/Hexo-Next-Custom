@@ -1627,6 +1627,16 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
+.post-copyright i.fa {
+  font-size: 15px;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1766,7 +1776,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #44ffe9;
+  background: #d4ff88;
 }
 .feed-link,
 .chat {
@@ -2755,7 +2765,7 @@ hr {
   color: #87daff;
 }
 body {
-  background: url("/images/custom/background.jpg");
+  background: url("https://i.loli.net/2019/06/14/5d037fd143f0220679.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
