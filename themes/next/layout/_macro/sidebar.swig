@@ -44,7 +44,7 @@
                 alt="{{ author }}"/>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
-			  			  <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+			  			  <script src="https://v1.hitokoto.cn/?c=g&encode=js&select=%23hitokoto" defer></script>
               <div class="site-description motion-element" id="hitokoto"></div>
               <div class="site-description motion-element" itemprop="description">{{ description }}</div>
           </div>
