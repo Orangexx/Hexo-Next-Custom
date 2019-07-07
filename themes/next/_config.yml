@@ -59,7 +59,7 @@ footer:
     # If you want to animate the icon, set it to true.
     animated: false
     # Change the color of icon, using Hex Code.
-    color: "#EE9572"
+    #color: "#EE9572"
 
   # If not defined, `author` from Hexo main config will be used.
   copyright:
@@ -161,6 +161,7 @@ menu:
   日常: /categories/日常/ || calendar
   Unity: /categories/Unity/ || heartbeat
   ACG: /categories/ACG/ || user
+  计院素养: /categories/计院素养 || heartbeat
   #tags: /tags/ || tags
   #categories: /categories/ || th
   #archives: /archives/ || archive
